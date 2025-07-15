@@ -1,17 +1,17 @@
-<<<<<<< HEAD
-version: '3'
+version: "3.8"
+
 services:
   frontend:
     image: nginx:alpine
-    volumes:
-      - ./frontend:/usr/share/nginx/html
     ports:
       - "3000:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    depends_on:
+      - backend
 
   backend:
-    build:
-      context: .
-      dockerfile: Dockerfile.backend
+    build: ./backend
     ports:
       - "5000:5000"
     depends_on:
@@ -21,27 +21,3 @@ services:
     image: mongo
     ports:
       - "27017:27017"
-=======
-version: '3'
-services:
-  frontend:
-    image: nginx:alpine
-    volumes:
-      - ./frontend:/usr/share/nginx/html
-    ports:
-      - "3000:80"
-
-  backend:
-    build:
-      context: .
-      dockerfile: Dockerfile.backend
-    ports:
-      - "5000:5000"
-    depends_on:
-      - mongo
-
-  mongo:
-    image: mongo
-    ports:
-      - "27017:27017"
->>>>>>> 03578d92272560ca5a18452f25432b3eb6c9064a
