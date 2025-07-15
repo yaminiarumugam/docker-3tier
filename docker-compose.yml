@@ -10,14 +10,14 @@ services:
     depends_on:
       - backend
 
-backend:
+  backend:
     build: ./backend
     ports:
       - "5000:5000"
     depends_on:
       - mongo
 
- mongo:
+  mongo:
     image: mongo
     ports:
       - "27017:27017"
