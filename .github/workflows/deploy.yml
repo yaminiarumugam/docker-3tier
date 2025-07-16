@@ -28,6 +28,6 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd /home/ubuntu/myapp
+            cd /home/ubuntu/docker-3tier
             docker-compose down
             docker-compose up --build -d
