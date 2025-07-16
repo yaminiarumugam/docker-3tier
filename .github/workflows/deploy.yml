@@ -19,7 +19,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           source: "."
-          target: "/home/ubuntu/myapp"
+          target: "/home/ubuntu/docker-3tier"
 
       - name: SSH into EC2 and deploy
         uses: appleboy/ssh-action@master
